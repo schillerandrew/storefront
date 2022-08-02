@@ -5,16 +5,40 @@ const initialState = {
     { name: 'Toys', desc: 'Fun for all ages' }
   ],
   activeCategory: null,
+  products: [
+    {
+      name: 'utensils set',
+      category: 'Kitchenware',
+      desc: 'spoons, forks, knifes',
+      price: '$19.98',
+      inventory: 15,
+    },
+    {
+      name: 'jeans',
+      category: 'Clothing',
+      desc: 'comfortable blue jeans',
+      price: '$19.98',
+      inventory: 24,
+    },
+    {
+      name: 'puzzle',
+      category: 'Toys',
+      desc: '500-piece puzzle depicting a train station',
+      price: '$19.98',
+      inventory: 6,
+    }
+  ]
 };
 
-function categoriesReducer(state = initialState, action) {
-  let { type, payload } = action;
-  switch (type) {
+function storefrontReducer(state = initialState, action) {
+  // let { type, payload } = action;
+  switch (action.type) {
 
     case 'SELECT_DEPT':
       return {
         ...state,
-        activeCategory: payload.name,
+        activeCategory: action.payload.name,
+        // activeCategory: payload.name,
       }
 
     default:
@@ -29,4 +53,4 @@ export const selectCategory = (category) => {
   }
 }
 
-export default categoriesReducer;
+export default storefrontReducer;
