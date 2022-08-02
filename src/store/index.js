@@ -1,10 +1,10 @@
 import { createStore, combineReducers } from 'redux';
 import { composeWithDevTools } from '@redux-devtools/extension';
 
-import departmentsReducer from './departments';
+import categoriesReducer from './storefront';
 
 let reducers = combineReducers({
-  departments: departmentsReducer,
+  categories: categoriesReducer,
 });
 
 export default function store(){

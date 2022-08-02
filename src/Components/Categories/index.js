@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
 import { Box, Button, Card, CardActions, CardContent, Typography } from '@mui/material';
-import { displayProducts } from '../../store/departments.js';
+import { selectCategory } from '../../store/storefront.js';
 
 const Categories = (props) => {
 
-  const { departments, displayProducts } = props;
+  const { categories, selectCategory } = props;
   return (
     <>
       <h1>Departments</h1>
@@ -14,14 +14,14 @@ const Categories = (props) => {
         textAlign: 'center',
         margin: '25px',
       }}>
-        {departments.map((department, idx) => (
+        {categories.map((category, idx) => (
           <Card sx={{ margin: '10px' }} raised key={`candidate-${idx}`}>
             <CardContent>
-              <Typography variant="h5">{department.name}</Typography>
-              <Typography variant="hp">{department.desc}</Typography>
+              <Typography variant="h5">{category.name}</Typography>
+              <Typography variant="hp">{category.desc}</Typography>
             </CardContent>
             <CardActions>
-              <Button variant="contained" onClick={() => displayProducts(department)}>Explore</Button>
+              <Button variant="contained" onClick={() => selectCategory(category)}>Explore</Button>
             </CardActions>
           </Card>
         ))}
@@ -30,13 +30,13 @@ const Categories = (props) => {
   );
 };
 
-const mapStateToProps = ({ departments }) => {
+const mapStateToProps = ({ categories }) => {
   return {
-    departments: departments.departments,
-    active: departments.active,
+    categories: categories.categories,
+    activeCategory: categories.activeCategory,
   };
 }
 
-const mapDispatchToProps = { displayProducts };
+const mapDispatchToProps = { selectCategory };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Categories);
