@@ -6,7 +6,7 @@ const Categories = (props) => {
 
   return (
     <>
-      <h1>Departments</h1>
+      <h2>Departments</h2>
       <Box sx={{
         display: 'flex',
         flexDirection: 'row',
@@ -14,7 +14,7 @@ const Categories = (props) => {
         margin: '25px',
       }}>
         {props.categories.map((category, idx) => (
-          <Card sx={{ margin: '10px' }} raised key={`candidate-${idx}`}>
+          <Card sx={{ margin: '10px' }} raised key={`category-${idx}`}>
             <CardContent>
               <Typography variant="h5">{category.name}</Typography>
               <Typography variant="hp">{category.desc}</Typography>

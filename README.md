@@ -2,9 +2,14 @@
 
 > ## Problem Domain
 
-### **Virtual Store Phase 1**
+### **Virtual Store Phase 2**
 
 An e-commerce storefront that uses React with Redux:
+
+- Shopping cart that allows products to be added to cart, and deleted
+  - cart count and inventory counts update
+
+---
 
 - Visually appealing site, styled with [Material UI](https://mui.com/material-ui/getting-started/installation/)
 - Redux Store manages the state of categories and products in the store
@@ -25,7 +30,7 @@ An e-commerce storefront that uses React with Redux:
 
 > ## Links
 
-- [GitHub pull request](https://github.com/schillerandrew/storefront/pull/1)
+- [GitHub pull request](https://github.com/schillerandrew/storefront/pull/2)
 
 > ## Architecture (front-end)
 

@@ -1,44 +1,43 @@
 const initialState = {
-  categories: [
-    { name: 'Kitchenware', desc: 'Put it all together with uHome kitchenware' },
-    { name: 'Clothing', desc: 'Look good while doing what you do' },
-    { name: 'Toys', desc: 'Fun for all ages' }
-  ],
   activeCategory: null,
+  categories: [
+    { name: 'Kitchenware', desc: 'Variety is the spices of life' },
+    { name: 'Clothing', desc: 'Look good, doing what you do' },
+    { name: 'Toys', desc: 'Fun for everyone' }
+  ],
   products: [
     {
-      name: 'utensils set',
+      name: '🍴 utensils set',
       category: 'Kitchenware',
       desc: 'spoons, forks, knifes',
       price: '$19.98',
-      inventory: 15,
+      inventory: 32,
     },
     {
-      name: 'jeans',
+      name: '👖 jeans',
       category: 'Clothing',
       desc: 'comfortable blue jeans',
       price: '$19.98',
       inventory: 24,
     },
     {
-      name: 'puzzle',
+      name: '🧩 puzzle',
       category: 'Toys',
       desc: '500-piece puzzle depicting a train station',
       price: '$19.98',
       inventory: 6,
-    }
-  ]
+    },
+  ],
 };
 
 function storefrontReducer(state = initialState, action) {
-  // let { type, payload } = action;
   switch (action.type) {
 
     case 'SELECT_DEPT':
+      console.log('select');
       return {
         ...state,
         activeCategory: action.payload.name,
-        // activeCategory: payload.name,
       }
 
     default:
