@@ -40,6 +40,22 @@ function storefrontReducer(state = initialState, action) {
         activeCategory: action.payload.name,
       }
 
+    // case 'ADD_TO_CART':
+    //   console.log('add');
+    //   return state.products.map(product => {
+    //     if (product.name === action.payload.name) {
+    //       product.inventory--;
+    //     }
+    //     return product;
+    //   })
+    // case 'REMOVE_FROM_CART':
+    //   return state.products.map(product => {
+    //     if (product.name === action.payload.name) {
+    //       product.inventory++;
+    //     }
+    //     return product;
+    //   })
+
     default:
       return state;
   }

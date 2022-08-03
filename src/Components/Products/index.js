@@ -7,7 +7,7 @@ const Products = (props) => {
 
   return (
     <>
-      <h2>Products</h2>
+      <h2>Products: {props.activeCategory}</h2>
       <Box sx={{
         display: 'flex',
         flexDirection: 'row',

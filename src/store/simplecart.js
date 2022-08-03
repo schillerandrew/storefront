@@ -2,7 +2,7 @@ const initialState = {
   shoppingCart: [],
 };
 
-function cartReducer (state = initialState, action) {
+function cartReducer(state = initialState, action) {
   switch (action.type) {
 
     case 'ADD_TO_CART':
@@ -11,6 +11,8 @@ function cartReducer (state = initialState, action) {
         ...state,
         shoppingCart: [...state.shoppingCart, action.payload],
       }
+    case 'REMOVE_FROM_CART':
+      return state.filter(product => product.name !== action.payload.name)
     default:
       return state;
   }
@@ -19,6 +21,13 @@ function cartReducer (state = initialState, action) {
 export const addToCart = (product) => {
   return {
     type: 'ADD_TO_CART',
+    payload: product,
+  }
+}
+
+export const removeFromCart = (product) => {
+  return {
+    type: 'REMOVE_FROM_CART',
     payload: product,
   }
 }
