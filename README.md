@@ -2,9 +2,13 @@
 
 > ## Problem Domain
 
-### **Virtual Store Phase 2**
+### **Virtual Store Phase 3**
 
 An e-commerce storefront that uses React with Redux:
+
+- Categories and products are retrieved from an API, using `thunk` to enable asynchronous actions
+
+---
 
 - Shopping cart that allows products to be added to cart, and deleted
   - cart count and inventory counts update
@@ -24,13 +28,14 @@ An e-commerce storefront that uses React with Redux:
 
 ### Dependencies
 
-- redux `|` react-redux `|` @redux-devtools/extension
-- @mui/icons-material `|` @mui/material
-- @emotion/react `|` @emotion/styled
+- redux | react-redux | @redux-devtools/extension
+- @mui/icons-material | @mui/material
+- @emotion/react | @emotion/styled
+- axios
 
 > ## Links
 
-- [GitHub pull request](https://github.com/schillerandrew/storefront/pull/2)
+- [GitHub pull request](https://github.com/schillerandrew/storefront/pull/3)
 
 > ## Architecture (front-end)
 

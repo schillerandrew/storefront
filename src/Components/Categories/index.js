@@ -1,9 +1,17 @@
-import { connect } from 'react-redux';
+import { useEffect } from 'react';
+import { connect, useDispatch } from 'react-redux';
 import { Box, Button, Card, CardActions, CardContent, Typography } from '@mui/material';
-import { selectCategory } from '../../store/storefront.js';
+import { selectCategory, getCategories } from '../../store/storefront';
 
 const Categories = (props) => {
-
+  let dispatch = useDispatch();
+  
+  useEffect(() => {
+    dispatch(getCategories());
+  }, []);
+  setTimeout( () => {
+    console.log('PROPS', props);
+  }, 5000);
   return (
     <>
       <h2>Departments</h2>

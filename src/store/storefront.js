@@ -1,3 +1,5 @@
+import axios from "axios";
+
 const initialState = {
   activeCategory: null,
   categories: [
@@ -40,6 +42,11 @@ function storefrontReducer(state = initialState, action) {
         activeCategory: action.payload.name,
       }
 
+    case 'GET_CATEGORIES':
+      return action.payload;
+
+    default:
+      return state;
     // case 'ADD_TO_CART':
     //   console.log('add');
     //   return state.products.map(product => {
@@ -55,9 +62,6 @@ function storefrontReducer(state = initialState, action) {
     //     }
     //     return product;
     //   })
-
-    default:
-      return state;
   }
 }
 
@@ -65,6 +69,20 @@ export const selectCategory = (category) => {
   return {
     type: 'SELECT_DEPT',
     payload: category,
+  }
+}
+
+export const getCategories = () => async (dispatch, getState) => {
+  let response = await axios.get('https://api-js401.herokuapp.com/api/v1/categories');
+  console.log('API', response.data);
+
+  dispatch(setCategories(response.data));
+}
+
+export const setCategories = (data) => {
+  return {
+    type: 'GET_CATEGORIES',
+    payload: data
   }
 }
 
