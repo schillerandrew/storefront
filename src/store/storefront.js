@@ -32,18 +32,18 @@ const initialState = {
   ],
 };
 
-function storefrontReducer(state = initialState, action) {
+export default function storefrontReducer(state = initialState, action) {
   switch (action.type) {
 
     case 'SELECT_DEPT':
-      console.log('select');
+      // console.log('select');
       return {
         ...state,
         activeCategory: action.payload.name,
       }
 
     case 'GET_CATEGORIES':
-      return action.payload;
+      return action.payload.results;
 
     default:
       return state;
@@ -85,5 +85,3 @@ export const setCategories = (data) => {
     payload: data
   }
 }
-
-export default storefrontReducer;

@@ -6,7 +6,7 @@ function cartReducer(state = initialState, action) {
   switch (action.type) {
 
     case 'ADD_TO_CART':
-      console.log('add');
+      // console.log('add');
       return {
         ...state,
         shoppingCart: [...state.shoppingCart, action.payload],

@@ -9,9 +9,11 @@ const Categories = (props) => {
   useEffect(() => {
     dispatch(getCategories());
   }, []);
+
   setTimeout( () => {
     console.log('PROPS', props);
   }, 5000);
+
   return (
     <>
       <h2>Departments</h2>
@@ -40,7 +42,7 @@ const Categories = (props) => {
 const mapStateToProps = (state) => {
   return {
     categories: state.storefront.categories,
-    activeCategory: state.storefront.activeCategory,
+    // activeCategory: state.storefront.activeCategory,
   };
 }
 
