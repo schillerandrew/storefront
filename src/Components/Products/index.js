@@ -1,8 +1,16 @@
-import { connect } from 'react-redux';
+import { useEffect } from 'react';
+import { connect, useDispatch } from 'react-redux';
 import { Box, Button, Card, CardActions, CardContent, Typography } from '@mui/material';
 import { addToCart } from '../../store/simplecart';
+import { getProducts} from '../../store/products';
 
 const Products = (props) => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getProducts());
+  }, []);
+
   let products = props.products.filter(product => product.category === props.activeCategory);
 
   return (
@@ -33,8 +41,8 @@ const Products = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    products: state.storefront.products,
-    activeCategory: state.storefront.activeCategory
+    products: state.products,
+    // activeCategory: state.storefront.activeCategory
   }
 };
 

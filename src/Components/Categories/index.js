@@ -1,18 +1,17 @@
 import { useEffect } from 'react';
 import { connect, useDispatch } from 'react-redux';
 import { Box, Button, Card, CardActions, CardContent, Typography } from '@mui/material';
-import { selectCategory, getCategories } from '../../store/storefront';
+import { selectCategory } from '../../store/storefront';
+import { getCategories } from '../../store/categories';
 
 const Categories = (props) => {
-  let dispatch = useDispatch();
+  const dispatch = useDispatch();
   
   useEffect(() => {
-    dispatch(getCategories());
+    dispatch(getCategories())
   }, []);
 
-  setTimeout( () => {
-    console.log('PROPS', props);
-  }, 5000);
+  console.log('CATEGORIES', props);
 
   return (
     <>
@@ -40,8 +39,9 @@ const Categories = (props) => {
 };
 
 const mapStateToProps = (state) => {
+  console.log('CATS STATE=', state);
   return {
-    categories: state.storefront.categories,
+    categories: state.categories,
     // activeCategory: state.storefront.activeCategory,
   };
 }
