@@ -2,25 +2,20 @@
 
 > ## Problem Domain
 
-### **Virtual Store Phase 3**
+### **Virtual Store Phase 4**
 
 An e-commerce storefront that uses React with Redux:
 
-- Categories and products are retrieved from an API, using `thunk` to enable asynchronous actions
-
----
-
-- Shopping cart that allows products to be added to cart, and deleted
-  - cart count and inventory counts update
+- Detail pages for individual products, and cart checkout page
 
 ---
 
 - Visually appealing site, styled with [Material UI](https://mui.com/material-ui/getting-started/installation/)
 - Redux Store manages the state of categories and products in the store
-- List of categories displayed (with state data)
-- When the user selects a category:
-  - That category is selected, and
-  - That category's products are displayed
+- Categories and products are retrieved from an API, using `thunk` to enable asynchronous actions
+- When the user selects a category, that category's products are displayed
+- Products can be added to cart and removed from cart
+  - Cart count and inventory counts both update
 
 > ## UML
 
@@ -35,7 +30,7 @@ An e-commerce storefront that uses React with Redux:
 
 > ## Links
 
-- [GitHub pull request](https://github.com/schillerandrew/storefront/pull/3)
+- [GitHub pull request](https://github.com/schillerandrew/storefront/pull/4)
 
 > ## Architecture (front-end)
 

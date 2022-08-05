@@ -6,7 +6,7 @@ const simpleCart = (props) => {
 
   return (
     <>
-    <h2>Cart</h2>
+    <h2>Cart: {props.shoppingCart.length}</h2>
       <Box sx={{
         display: 'flex',
         flexDirection: 'row',
