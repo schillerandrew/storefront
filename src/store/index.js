@@ -4,6 +4,7 @@ import thunk from './middleware/thunk';
 
 // import storefrontReducer from './storefront';
 import categoriesReducer from './categories';
+import activeCategoryReducer from './active';
 import productsReducer from './products';
 import cartReducer from './simplecart';
 
@@ -11,6 +12,7 @@ import cartReducer from './simplecart';
 let reducers = combineReducers({
   // storefront: storefrontReducer,
   categories: categoriesReducer,
+  active: activeCategoryReducer,
   products: productsReducer,
   cart: cartReducer,
 });

@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { connect, useDispatch } from 'react-redux';
 import { Box, Button, Card, CardActions, CardContent, Typography } from '@mui/material';
-import { selectCategory } from '../../store/storefront';
+import { activeCategory } from '../../store/active';
 import { getCategories } from '../../store/categories';
 
 const Categories = (props) => {
@@ -29,7 +29,7 @@ const Categories = (props) => {
               <Typography variant="hp">{category.desc}</Typography>
             </CardContent>
             <CardActions>
-              <Button variant="contained" onClick={() => props.selectCategory(category)}>Explore</Button>
+              <Button variant="contained" onClick={() => props.activeCategory(category)}>Explore</Button>
             </CardActions>
           </Card>
         ))}
@@ -42,10 +42,10 @@ const mapStateToProps = (state) => {
   console.log('CATS STATE=', state);
   return {
     categories: state.categories,
-    // activeCategory: state.storefront.activeCategory,
+    // active: state.active.activeCategory,
   };
 }
 
-const mapDispatchToProps = { selectCategory };
+const mapDispatchToProps = { activeCategory };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Categories);

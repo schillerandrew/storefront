@@ -42,7 +42,7 @@ const Products = (props) => {
 const mapStateToProps = (state) => {
   return {
     products: state.products,
-    // activeCategory: state.storefront.activeCategory
+    activeCategory: state.active
   }
 };
 

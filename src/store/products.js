@@ -3,21 +3,21 @@ import axios from 'axios';
 const initialState = [
   {
     name: '🍴 utensils set',
-    category: 'Kitchenware',
+    category: 'food',
     desc: 'spoons, forks, knifes',
     price: '$19.98',
     inventory: 32,
   },
   {
     name: '👖 jeans',
-    category: 'Clothing',
+    category: 'weapons',
     desc: 'comfortable blue jeans',
     price: '$19.98',
     inventory: 24,
   },
   {
     name: '🧩 puzzle',
-    category: 'Toys',
+    category: 'games',
     desc: '500-piece puzzle depicting a train station',
     price: '$19.98',
     inventory: 6,

@@ -1,9 +1,9 @@
 import axios from "axios";
 
 const initialState = [
-    { name: 'Kitchenware', desc: 'Variety is the spices of life' },
-    { name: 'Clothing', desc: 'Look good, doing what you do' },
-    { name: 'Toys', desc: 'Fun for everyone' },
+    { name: 'food', desc: 'Variety is the spices of life' },
+    { name: 'weapons', desc: 'Look good, doing what you do' },
+    { name: 'games', desc: 'Fun for everyone' },
 ];
 
 export default function categoriesReducer(state = initialState, action) {
