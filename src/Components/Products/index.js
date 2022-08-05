@@ -27,7 +27,7 @@ const Products = (props) => {
             <CardContent>
               <Typography variant="h5">{product.name}</Typography>
               <Typography variant="h6">{product.desc}</Typography>
-              <Typography variant="hp">In stock: {product.inventory}</Typography>
+              <Typography variant="hp">In stock: {product.inStock}</Typography>
             </CardContent>
             <CardActions>
               <Button variant="contained" onClick={() => props.addToCart(product)}>Add to Cart</Button>

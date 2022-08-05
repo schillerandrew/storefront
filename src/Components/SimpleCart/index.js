@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { Box, Button, Card, CardActions, CardContent, Typography } from '@mui/material';
+import { removeFromCart } from '../../store/simplecart';
 
 const simpleCart = (props) => {
 
@@ -18,7 +19,7 @@ const simpleCart = (props) => {
               <Typography variant="h5">{product.name}</Typography>
             </CardContent>
             <CardActions>
-              <Button variant="contained">Delete</Button>
+              <Button variant="contained" onClick={() => props.removeFromCart(product)}>Delete</Button>
             </CardActions>
           </Card>
         ))}
@@ -33,4 +34,6 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(simpleCart);
+const mapDispatchToProps = { removeFromCart };
+
+export default connect(mapStateToProps, mapDispatchToProps)(simpleCart);

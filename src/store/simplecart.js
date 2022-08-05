@@ -6,13 +6,14 @@ function cartReducer(state = initialState, action) {
   switch (action.type) {
 
     case 'ADD_TO_CART':
-      // console.log('add');
       return {
         ...state,
         shoppingCart: [...state.shoppingCart, action.payload],
       }
     case 'REMOVE_FROM_CART':
-      return state.filter(product => product.name !== action.payload.name)
+      return {
+        shoppingCart: state.shoppingCart.filter(product => product.name !== action.payload.name)
+      }
     default:
       return state;
   }
