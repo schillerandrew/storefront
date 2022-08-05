@@ -1,0 +1,14 @@
+header {
+  background-color: #C5EDF0;
+}
+
+h1 {
+  color: #7AE5EC;
+  /* font-weight: bold; */
+  font-size: 100px;
+  text-align: center;
+}
+
+hr {
+  border: 2px solid #74F7B6;
+}
